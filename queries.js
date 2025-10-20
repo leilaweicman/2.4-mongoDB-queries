@@ -25,7 +25,6 @@ db.restaurants.find({ "address.coord.1": { $gt: 42, $lte: 52 } }, { restaurant_i
 db.restaurants.find({}).sort({ name: 1 });
 db.restaurants.find({}).sort({ name: -1 });
 db.restaurants.find({}).sort({ cuisine: 1, borough: -1 });
-db.restaurants.find({ "address.street": { $exists: false } }, { restaurant_id: 1, name: 1, address: 1 });
 db.restaurants.find({ $or: [ { "address.street": { $exists: false } }, { "address.street": "" } ] }, { restaurant_id: 1, name: 1, address: 1 });
 db.restaurants.find({ "address.coord": { $type: "double" } });
 db.restaurants.find({ "grades.score": { $mod: [7, 0] } }, { restaurant_id: 1, name: 1, grades: 1 });
